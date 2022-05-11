@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+                        <!--   注解配置的xml依赖配置         -->
+<!--    1.加入context、tx和aop命名空间-->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
+       http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+<!--    2.数据库部分相关配置-->
+    <!--加载jdbc.properties配置文件-->
+    <context:property-placeholder location="classpath:jdbc.properties"/>
+    <!--配置数据源对象-->
+    <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource">
+        <property name="driverClassName" value="${jdbc.driverClassName}"/>
+        <property name="url" value="${jdbc.url}"/>
+        <property name="username" value="${jdbc.username}"/>
+        <property name="password" value="${jdbc.password}"/>
+    </bean>
+    <!--配置JdbcTemplate对象-->
+    <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+    <bean id="SqlSessionFactoryBean" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="dataSource"/>
+        <!--加载mybatis核心配置文件-->
+        <property name="configLocation" value="classpath:sqlMapConfig.xml"/>
+
+    </bean>
+<!--    扫描mapper所在的包：为mapper创建实现类-->
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="basePackage" value="com.cn.mapper"/>
+    </bean>
+
+<!--    3.事务相关配置-->
+    <!--组件扫描-->
+    <context:component-scan base-package="com.cn">
+        <!--排除controller的扫描-->
+        <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+    </context:component-scan>
+    <!--aop自动代理-->
+    <aop:aspectj-autoproxy expose-proxy="true"/>
+    <!--配置平台事务管理器-->
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+    <!--事务的注解驱动-->
+    <tx:annotation-driven transaction-manager="transactionManager"/>
+
+</beans>

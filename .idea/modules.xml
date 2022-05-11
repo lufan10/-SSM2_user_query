@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/ssm2.iml" filepath="$PROJECT_DIR$/.idea/ssm2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/user_query/user_query.iml" filepath="$PROJECT_DIR$/user_query/user_query.iml" />
+    </modules>
+  </component>
+</project>

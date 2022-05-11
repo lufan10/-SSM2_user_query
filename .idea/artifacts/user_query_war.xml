@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="user_query:war">
+    <output-path>$PROJECT_DIR$/user_query/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>user_query</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="travel.war">
+      <element id="artifact" artifact-name="user_query:war exploded" />
+    </root>
+  </artifact>
+</component>
