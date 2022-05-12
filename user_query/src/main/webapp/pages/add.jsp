@@ -69,6 +69,12 @@
         </div>
     </div>
     <div class="form-group">
+        <label for="birthday" class="col-md-5 control-label">birthday:</label>
+        <div class="col-md-3">
+            <input type="date" class="form-control" id="birthday" name="birthday" placeholder="请输入生日">
+        </div>
+    </div>
+    <div class="form-group">
         <div class="col-md-offset-5 col-md-3">
             <button type="submit" class="btn btn-primary">提交</button>
             <a class="btn btn-default" href="/pages/add.jsp" role="button">重置</a>

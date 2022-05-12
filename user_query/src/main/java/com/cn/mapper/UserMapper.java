@@ -15,12 +15,10 @@ public interface UserMapper {
     @Select("select * from loginuser where username=#{username} and password=#{password}")
     LoginUser login(LoginUser loginUser);
     //DML
-    @Insert("INSERT INTO user VALUES(#{id},#{name},#{sex},#{age},#{qq},#{address},#{email})")
+    @Insert("INSERT INTO user VALUES(#{id},#{name},#{sex},#{age},#{qq},#{address},#{email},#{birthday})")
     void insert(User user);
     @Delete("DELETE FROM user WHERE id=#{id}")
     void delete(int id);
-
-
-    @Update("UPDATE user SET name=#{name},sex=#{sex},age=#{age},address=#{address},qq=#{qq},email=#{email} where id=#{id}")
+    @Update("UPDATE user SET name=#{name},sex=#{sex},age=#{age},address=#{address},qq=#{qq},email=#{email},birthday=#{birthday} where id=#{id}")
     void update(User user);
 }

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--    1.加入mapper文件约束头-->
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+<!--    以下子标签都固定的顺序，不能乱放-->
+<!--    3.自定义类型别名-->
+    <typeAliases>
+    <!--为domain包下的所有实体类定义类型别名-->
+       <package name="com.cn.domain"/>
+    </typeAliases>
+<!--    4.注册类型处理器-->
+    <typeHandlers>
+        <typeHandler handler="com.cn.handler.DateTypeHandler"/>
+    </typeHandlers>
+<!--    5.配置分页助手插件-->
+    <plugins>
+        <plugin interceptor="com.github.pagehelper.PageHelper">
+            <!--指定方言-->
+            <property name="dialect" value="mysql"/>
+        </plugin>
+    </plugins>
+</configuration>

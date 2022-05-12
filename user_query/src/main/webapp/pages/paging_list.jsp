@@ -50,6 +50,7 @@
             <th>籍贯</th>
             <th>QQ</th>
             <th>邮箱</th>
+            <th>出生日期</th>
             <th>操作</th>
         </tr>
         <%-- 动态获取表格参数--%>
@@ -63,6 +64,7 @@
                <td>${user.address}</td>
                <td>${user.qq}</td>
                <td>${user.email}</td>
+                <td>${user.birthday}</td>
                <td>
                    <a class="btn btn-default btn-sm"
                       href="${pageContext.request.contextPath}/user/find?id=${user.id}">
