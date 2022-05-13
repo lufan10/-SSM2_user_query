@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$/demo1" />
+    <file type="web" url="file://$PROJECT_DIR$/springboot_jsp" />
+    <file type="web" url="file://$PROJECT_DIR$/springboot_ssm" />
     <file type="web" url="file://$PROJECT_DIR$/user_query" />
   </component>
   <component name="JavaScriptSettings">
@@ -10,6 +13,9 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/user_query/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot_ssm/pom.xml" />
+        <option value="$PROJECT_DIR$/demo1/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot_jsp/pom.xml" />
       </list>
     </option>
   </component>
