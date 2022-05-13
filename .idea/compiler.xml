@@ -15,6 +15,7 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="demo1" target="12" />
+      <module name="springboot_01_项目模板" target="12" />
       <module name="springboot_jsp" target="12" />
       <module name="springboot_ssm" target="12" />
       <module name="user_query" target="12" />
@@ -23,6 +24,7 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="demo1" options="-parameters" />
+      <module name="springboot_01_项目模板" options="-parameters" />
       <module name="springboot_jsp" options="-parameters" />
       <module name="springboot_ssm" options="-parameters" />
     </option>

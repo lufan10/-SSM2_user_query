@@ -1,0 +1,23 @@
+spring:
+  # jsp文件的前后缀
+  mvc:
+    view:
+      suffix: .jsp
+      prefix: /pages/
+  # 数据源参数
+  datasource:
+    druid:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql:///ssm
+      username: root
+      password: root
+  # 端口
+server:
+  port: 80
+  # 分页
+pagehelper:
+  helper-dialect: mysql
+  reasonable: true
+  support-methods-arguments: true
+  params: count=countSql
+  page-size-zero: false
