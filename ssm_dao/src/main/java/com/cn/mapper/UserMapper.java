@@ -1,5 +1,4 @@
 package com.cn.mapper;
-
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.cn.domain.LoginUser;
 import com.cn.domain.User;
@@ -7,7 +6,7 @@ import org.apache.ibatis.annotations.*;
 
 import java.util.List;
 @Mapper
-public interface UserMapper{
+public interface UserMapper extends BaseMapper<User> {
     //DQL
     @Select("select * from user")
     List<User> findAll();
@@ -19,7 +18,7 @@ public interface UserMapper{
     LoginUser login(LoginUser loginUser);
     //DML
     @Insert("INSERT INTO user VALUES(#{id},#{name},#{sex},#{age},#{qq},#{address},#{email},#{birthday})")
-    void insert(User user);
+    int insert(User user);
     @Delete("DELETE FROM user WHERE id=#{id}")
     void delete(int id);
     @Update("UPDATE user SET name=#{name},sex=#{sex},age=#{age},address=#{address},qq=#{qq},email=#{email},birthday=#{birthday} where id=#{id}")

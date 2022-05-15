@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="ssm_pojo:war">
+    <output-path>$PROJECT_DIR$/ssm_pojo/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>ssm_pojo</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="travel.war">
+      <element id="artifact" artifact-name="ssm_pojo:war exploded" />
+    </root>
+  </artifact>
+</component>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.cn</groupId>
+    <artifactId>ssm</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <!-- 聚合管理工程列表-->
+    <modules>
+        <!--具体工程名称-->
+        <module>../ssm_pojo</module>
+        <module>../ssm_dao</module>
+        <module>../ssm_service</module>
+        <module>../ssm_controller</module>
+    </modules>
+    <!--1.编码和匹配jdk版本-->
+    <properties>
+        <!--    Maven警告解决：Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platfor-->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>12</maven.compiler.source>
+        <maven.compiler.target>12</maven.compiler.target>
+    </properties>
+</project>

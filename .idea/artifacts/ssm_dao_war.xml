@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="ssm_dao:war">
+    <output-path>$PROJECT_DIR$/ssm_dao/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>ssm_dao</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="travel.war">
+      <element id="artifact" artifact-name="ssm_dao:war exploded" />
+    </root>
+  </artifact>
+</component>

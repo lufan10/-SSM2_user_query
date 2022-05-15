@@ -7,9 +7,13 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="springboot_ssm" />
-        <module name="springboot_jsp" />
         <module name="demo1" />
+        <module name="springboot_ssm" />
+        <module name="ssm_pojo" />
+        <module name="ssm_dao" />
+        <module name="springboot_jsp" />
+        <module name="ssm_service" />
+        <module name="ssm_controller" />
         <module name="user_query" />
       </profile>
     </annotationProcessing>
@@ -18,6 +22,11 @@
       <module name="springboot_01_项目模板" target="12" />
       <module name="springboot_jsp" target="12" />
       <module name="springboot_ssm" target="12" />
+      <module name="ssm" target="12" />
+      <module name="ssm_controller" target="12" />
+      <module name="ssm_dao" target="12" />
+      <module name="ssm_pojo" target="12" />
+      <module name="ssm_service" target="12" />
       <module name="user_query" target="12" />
     </bytecodeTargetLevel>
   </component>
@@ -27,6 +36,9 @@
       <module name="springboot_01_项目模板" options="-parameters" />
       <module name="springboot_jsp" options="-parameters" />
       <module name="springboot_ssm" options="-parameters" />
+      <module name="ssm_controller" options="-parameters" />
+      <module name="ssm_dao" options="-parameters" />
+      <module name="ssm_service" options="-parameters" />
     </option>
   </component>
 </project>

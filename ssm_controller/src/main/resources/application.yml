@@ -1,0 +1,13 @@
+spring:
+  mvc:
+    view:
+      suffix: .jsp
+      prefix: /pages/
+  datasource:
+    druid:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql:///ssm
+      username: root
+      password: root
+server:
+  port: 80

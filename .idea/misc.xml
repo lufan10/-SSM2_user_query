@@ -4,6 +4,11 @@
     <file type="web" url="file://$PROJECT_DIR$/demo1" />
     <file type="web" url="file://$PROJECT_DIR$/springboot_jsp" />
     <file type="web" url="file://$PROJECT_DIR$/springboot_ssm" />
+    <file type="web" url="file://$PROJECT_DIR$/ssm" />
+    <file type="web" url="file://$PROJECT_DIR$/ssm_controller" />
+    <file type="web" url="file://$PROJECT_DIR$/ssm_dao" />
+    <file type="web" url="file://$PROJECT_DIR$/ssm_pojo" />
+    <file type="web" url="file://$PROJECT_DIR$/ssm_service" />
     <file type="web" url="file://$PROJECT_DIR$/user_query" />
   </component>
   <component name="JavaScriptSettings">
@@ -16,6 +21,11 @@
         <option value="$PROJECT_DIR$/springboot_ssm/pom.xml" />
         <option value="$PROJECT_DIR$/demo1/pom.xml" />
         <option value="$PROJECT_DIR$/springboot_jsp/pom.xml" />
+        <option value="$PROJECT_DIR$/ssm/pom.xml" />
+        <option value="$PROJECT_DIR$/ssm_pojo/pom.xml" />
+        <option value="$PROJECT_DIR$/ssm_dao/pom.xml" />
+        <option value="$PROJECT_DIR$/ssm_service/pom.xml" />
+        <option value="$PROJECT_DIR$/ssm_controller/pom.xml" />
       </list>
     </option>
   </component>

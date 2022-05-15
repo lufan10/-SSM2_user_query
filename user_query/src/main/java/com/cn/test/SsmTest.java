@@ -1,10 +1,7 @@
 package com.cn.test;
 
-import com.cn.domain.User;
 import com.cn.mapper.UserMapper;
 import org.junit.Test;
-
-import java.util.List;
 
 public class SsmTest {
     private UserMapper userMapper;

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.cn</groupId>
+    <artifactId>ssm_controller</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>war</packaging>
+    <!--    <packaging>jar</packaging>-->
+    <!-- 父级依赖-->
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <version>2.5.4</version>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <relativePath/>
+    </parent>
+
+    <!--1.编码和匹配jdk版本-->
+    <properties>
+        <!--    Maven警告解决：Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platfor-->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>12</maven.compiler.source>
+        <maven.compiler.target>12</maven.compiler.target>
+    </properties>
+    <dependencies>
+        <dependency>
+            <!-- 直接依赖项目模块ssm_service,间接依赖ssm_dao,ssm_pojo-->
+            <groupId>com.cn</groupId>
+            <artifactId>ssm_service</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>jstl</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.tomcat.embed</groupId>
+            <artifactId>tomcat-embed-jasper</artifactId>
+        </dependency>
+        <dependency>
+            <!-- 包含了mybatis-spring-boot-starter和 pagehelper坐标-->
+            <groupId>com.github.pagehelper</groupId>
+            <artifactId>pagehelper-spring-boot-starter</artifactId>
+            <version>1.4.2</version>
+        </dependency>
+    </dependencies>
+</project>

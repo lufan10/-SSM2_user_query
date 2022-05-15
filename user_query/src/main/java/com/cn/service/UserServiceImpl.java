@@ -3,7 +3,6 @@ package com.cn.service;
 import com.cn.domain.LoginUser;
 import com.cn.domain.User;
 import com.cn.mapper.UserMapper;
-import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 

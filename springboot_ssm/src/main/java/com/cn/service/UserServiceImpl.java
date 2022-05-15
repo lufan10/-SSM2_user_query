@@ -2,7 +2,7 @@ package com.cn.service;
 
 import com.cn.domain.LoginUser;
 import com.cn.domain.User;
-import com.cn.mapper.UserMapper;
+import com.cn.UserMapper;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
