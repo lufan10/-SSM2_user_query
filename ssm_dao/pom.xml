@@ -60,5 +60,28 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
         </dependency>
+        <!--日志系列-->
+        <dependency>
+            <!--日志规范-->
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.7.25</version>
+        </dependency>
+        <dependency>
+            <!--logback-core 模块为其他两个模块奠定了基础，必须有。-->
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-core</artifactId>
+        </dependency>
+        <dependency>
+            <!--它是log4j的一个改良版本，同时它完整实现了slf4j API。-->
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <!--与 Tomcat 和 Jetty 等 Servlet 容器集成，以提供 HTTP 访问日志功能-->
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-access</artifactId>
+        </dependency>
     </dependencies>
 </project>
