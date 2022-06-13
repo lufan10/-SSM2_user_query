@@ -1,14 +1,15 @@
 package com.cn.domain;
-import lombok.AllArgsConstructor;
+
 import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
-@NoArgsConstructor
-@AllArgsConstructor
+
+import java.io.Serializable;
+
+/**
+ * 用户登录
+ */
 @Data
-@ToString
-public class LoginUser {
-    private int id;
+public class LoginUser implements Serializable {
+    private Integer id;
     private String username;
     private String password;
 }

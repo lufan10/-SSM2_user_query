@@ -24,8 +24,9 @@ import java.util.List;
 @Controller
 @RequestMapping("/user")
 public class UserController {
-    @Resource(name = "userService")
+    @Resource
     private UserService userService;
+
     @RequestMapping("/login")
     public ModelAndView login(LoginUser userLogin,String security,HttpSession session){
         LoginUser user = userService.login(userLogin);
@@ -37,12 +38,13 @@ public class UserController {
             //提示信息
             mv.addObject("msg","验证码不正确或为空请重新输入！");
             //跳转登录页面
-            mv.setViewName("/index.jsp");
+            mv.setViewName("index");
         }
         if (user !=null){
             mv.addObject("success","恭喜你！"+userLogin.getUsername()+"登录成功！");
             mv.setViewName("display");
         }else {
+            mv.addObject("fail","登录失败，账户不存在!");
             mv.setViewName("fail");
         }
         return mv;
@@ -62,36 +64,44 @@ public class UserController {
         userService.update(user);
         return "redirect:/user/findAll";
     }
+    @RequestMapping("/userAdd")
+    public ModelAndView userAdd(){
+        ModelAndView mv = new ModelAndView();
+        mv.setViewName("add");
+        return mv;
+    }
     @RequestMapping("/add")
     public String add(User user){
         userService.insert(user);
         return "redirect:/user/findAll";
     }
     @RequestMapping("/findAll")
-    public ModelAndView findAll(HttpServletRequest request){
+    public ModelAndView findAll(){
         List<User> users = userService.findAll();
         ModelAndView mv = new ModelAndView();
-        request.setAttribute("users",users);
+        mv.addObject("users",users);
         mv.setViewName("all_list");
         return mv;
     }
+
     @RequestMapping("/findByNameAndAddressAndEmail")
     public ModelAndView findByNameAndAddressAndEmail(String name,String address,String email,HttpServletRequest request){
         List<User> partSelect = userService.findByNameAndAddressAndEmail(name, address, email);
         ModelAndView mv = new ModelAndView();
-        request.setAttribute("partSelect",partSelect);
+        mv.addObject("partSelect",partSelect);
+//        request.setAttribute();
         mv.setViewName("partSelect_list");
         return mv;
     }
 
     @RequestMapping("/findUserByPage")
     public ModelAndView findUserByPage(int currentPage, HttpServletRequest request){
-        PageHelper.startPage(currentPage,5); //设置分页相关参数必须放在查询所有用户之前，其作用是限制查询范围。
+        PageHelper.startPage(currentPage,2); //设置分页相关参数必须放在查询所有用户之前，其作用是限制查询范围。
         List<User> userList = userService.findAll();
         PageInfo<User> pageInfo = new PageInfo<>(userList);
         ModelAndView mv = new ModelAndView();
-        request.setAttribute("pageInfo",pageInfo);
-        request.setAttribute("userList",userList);
+        mv.addObject("pageInfo",pageInfo);
+        mv.addObject("userList",userList);
         mv.setViewName("paging_list");
         return mv;
     }
@@ -99,7 +109,8 @@ public class UserController {
     public ModelAndView find(int id,HttpServletRequest request){
         User user = userService.find(id);
         ModelAndView mv = new ModelAndView();
-        request.setAttribute("User",user);
+//        request.setAttribute("User",user);
+        mv.addObject("User",user);
         mv.setViewName("update");
         return mv;
     }

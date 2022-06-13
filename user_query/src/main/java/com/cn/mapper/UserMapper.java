@@ -1,16 +1,18 @@
 package com.cn.mapper;
+
 import com.cn.domain.LoginUser;
 import com.cn.domain.User;
 import org.apache.ibatis.annotations.*;
-import java.util.List;
 
+import java.util.List;
+@Mapper
 public interface UserMapper {
     //DQL
     @Select("select * from user")
     List<User> findAll();
     @Select("select * from user where id=#{id}")
     User find(int id);
-    @Select("select * from user where name=#{arg0} and address=#{arg1} and email=#{arg2}")
+    @Select("select * from user where name=#{name} or address=#{address} or email=#{email}")
     List<User> findByNameAndAddressAndEmail(String name,String address,String email);
     @Select("select * from loginuser where username=#{username} and password=#{password}")
     LoginUser login(LoginUser loginUser);

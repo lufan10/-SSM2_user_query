@@ -3,9 +3,7 @@ package com.cn.service;
 import com.cn.domain.LoginUser;
 import com.cn.domain.User;
 import com.cn.mapper.UserMapper;
-import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -13,8 +11,8 @@ import java.util.List;
 /**
  * 继承并实现UserService接口类的findAll()方法
  */
-@Transactional
-@Service("userService")
+//@Transactional
+@Service
 public class UserServiceImpl implements UserService {
     @Resource
     private UserMapper userMapper;
